@@ -16,13 +16,6 @@ public class User {
     @Column(length = 100,nullable = false)
     private String password;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
