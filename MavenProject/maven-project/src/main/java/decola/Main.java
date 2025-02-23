@@ -21,7 +21,7 @@ public class Main {
         dto.setId(2);
         dto.setName("Miguel");
         dto.setBirthday(LocalDate.now().minusYears(26));
-        
+
         System.out.println(mapper.toModel(dto));
         System.out.println(mapper.toDTO(model));
 
