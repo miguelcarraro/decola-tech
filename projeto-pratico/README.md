@@ -1,24 +1,41 @@
-# Getting Started
+# Java RESTful API
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Diagrama de Classes
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin/packaging-oci-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.3/reference/web/servlet.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.3/reference/data/sql.html#data.sql.jpa-and-spring-data)
+```mermaid
+classDiagram
+    class User {
+        - String name
+        - Account account
+        - List~Feature~ features
+        - Card card
+        - List~News~ news
+    }
 
-### Guides
-The following guides illustrate how to use some features concretely:
+    class Account {
+        - String number
+        - String agency
+        - String balance
+        - String limit
+    }
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+    class Feature {
+        - String icon
+        - String description
+    }
 
-### Additional Links
-These additional references should also help you:
+    class Card {
+        - String number
+        - String limit
+    }
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+    class News {
+        - String icon
+        - String description
+    }
 
+    User "1" *-- "1" Account
+    User "1" *-- "1" Card
+    User "1" *-- "N" Feature 
+    User "1" *-- "N" News 
+```
