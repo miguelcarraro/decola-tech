@@ -1,4 +1,4 @@
-package tech.decola.model;
+package tech.decola.domain.model;
 
 import jakarta.persistence.Entity;
 
